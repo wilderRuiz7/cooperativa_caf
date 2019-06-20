@@ -1,0 +1,32 @@
+{
+  "name": "chons-gym-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node server.js",
+    "start-dev": "cross-env NODE_ENV=development nodemon server.js",
+    "start-debug": "cross-env DEBUG=* node --inspect server.js",
+    "start-debug-brk": "cross-env DEBUG=* node --inspect-brk server.js",
+    "clean": "rimraf */node_modules node_modules",
+    "lint": "standard --fix",
+    "setup-db": "cross-env DEBUG=* node db/setup.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chons-gym/api": "file:api",
+    "@chons-gym/config": "file:config",
+    "@chons-gym/db": "file:db",
+    "@chons-gym/errors": "file:errors",
+    "@chons-gym/utils": "file:utils",
+    "cors": "^2.8.4",
+    "cross-env": "^5.1.6",
+    "express": "^4.16.3",
+    "helmet": "^3.12.1",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11",
+    "standard": "^12.0.1"
+  }
+}
